@@ -4,3 +4,4 @@
    2. Add No-subscription repositories
    3. Update
    4. Reboot
+3. [Install monitoring](monitoring/README)

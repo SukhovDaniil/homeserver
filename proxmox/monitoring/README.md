@@ -8,7 +8,7 @@
         curl 192.168.1.103:9100  
         ```
 
-3. Create VM from [Docker-VM community script](https://community-scripts.github.io/ProxmoxVE/scripts?id=docker-vm&category=Containers+%26+Docker)
+2. Create VM from [Docker-VM community script](https://community-scripts.github.io/ProxmoxVE/scripts?id=docker-vm&category=Containers+%26+Docker)
     ```bash 
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/vm/docker-vm.sh)"
     ```
@@ -17,4 +17,6 @@
        RAM: 8-16 GB (8192 MiB)
        Storage: 100-200 GB SSD (зависит от периода хранения)
        Network: 1 Gbps
-2. Copy docker-compose.yml
+3. Copy configs
+   1. [docker-compose.yml](monitoring.docker-compose.yml) 
+   2. [prometheus.yml](prometheus.yml)

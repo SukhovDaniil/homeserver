@@ -20,3 +20,4 @@
 3. Copy configs
    1. [docker-compose.yml](monitoring.docker-compose.yml) 
    2. [prometheus.yml](prometheus.yml)
+4. Set docker compose as system service - [monitoringcompose.service](monitoringcompose.service)

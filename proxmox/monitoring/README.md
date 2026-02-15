@@ -21,3 +21,8 @@
    1. [docker-compose.yml](monitoring.docker-compose.yml) 
    2. [prometheus.yml](prometheus.yml)
 4. Set docker compose as system service - [monitoringcompose.service](monitoringcompose.service)
+    ```bash
+    curl -o /etc/systemd/system/monitoringcompose.service https://raw.githubusercontent.com/SukhovDaniil/homeserver/refs/heads/main/proxmox/monitoring/monitoringcompose.service
+    systemctl daemon-reload
+    systemctl start monitoringcompose && systemctl enable monitoringcompose
+    ```

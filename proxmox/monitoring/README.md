@@ -17,10 +17,24 @@
        RAM: 8-16 GB (8192 MiB)
        Storage: 100-200 GB SSD (зависит от периода хранения)
        Network: 1 Gbps
-3. Copy configs
+3. Install [node_exporter](https://prometheus.io/docs/guides/node-exporter/)
+    1. copy [installer](node_exporter_installer.sh)
+        ```bash
+         scp ./proxmox/monitoring/node_exporter_installer.sh root@<ip>:/root/node_exporter_installer.sh
+        ```
+    2. check endpoints
+         ```bash
+         curl 192.168.1.103:9100  
+         ```
+4. Copy configs
    1. [docker-compose.yml](monitoring.docker-compose.yml) 
    2. [prometheus.yml](prometheus.yml)
-4. Set docker compose as system service - [monitoringcompose.service](monitoringcompose.service)
+5. Turn on systemd-time-wait-sync.service for enable time-sync.target
+   ```shell
+    systemctl enable systemd-time-wait-sync.service
+    ```
+   Because incorrect time trigger errors in prometheus
+6. Set docker compose as system service - [monitoringcompose.service](monitoringcompose.service)
     ```bash
     curl -o /etc/systemd/system/monitoringcompose.service https://raw.githubusercontent.com/SukhovDaniil/homeserver/refs/heads/main/proxmox/monitoring/monitoringcompose.service
     systemctl daemon-reload

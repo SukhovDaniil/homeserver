@@ -1,7 +1,7 @@
 [Unit]
 Description=Docker Compose for monitoring
 # Assumes Docker service is running before this service starts
-After=docker.service
+After=time-sync.target
 Requires=docker.service
 
 [Service]

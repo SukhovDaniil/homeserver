@@ -3,7 +3,7 @@ cd ~
 wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
 tar xvfz ./node_exporter-1.10.2.linux-amd64.tar.gz
 cp ./node_exporter-1.10.2.linux-amd64/node_exporter /usr/bin/node_exporter
-rm -fr node_exporter-1.10.2.linux-amd64
+rm -fr ./node_exporter-1.10.2.linux-amd64
 
 useradd -M --shell /sbin/nologin node_exporter || true
 

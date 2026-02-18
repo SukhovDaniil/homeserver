@@ -4,10 +4,12 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - /root/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /var/monitoring/prometheus:/prometheus
   grafana:
     image: grafana/grafana:12.4.0-22046043985
     ports:
       - 3000:3000
     volumes:
-      - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/grafana-datasources.yml
+      - /root/grafana-datasources.yml:/etc/grafana/provisioning/datasources/grafana-datasources.yml
+      - /var/monitoring/grafana:/var/lib/grafana

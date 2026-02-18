@@ -9,6 +9,7 @@ Type=oneshot
 # RemainAfterExit=yes is crucial for 'oneshot' type services that start background processes
 RemainAfterExit=yes
 WorkingDirectory=/root
+User=monitoringcompose
 # Use absolute paths for docker and docker compose commands
 ExecStart=/usr/bin/docker compose up -d --remove-orphans
 ExecStop=/usr/bin/docker compose down

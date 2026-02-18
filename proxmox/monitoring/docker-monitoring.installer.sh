@@ -10,6 +10,7 @@ curl -o /root/grafana-datasources.yml https://raw.githubusercontent.com/SukhovDa
 
 echo "create dirs for monitoring services"
 mkdir -p /var/monitoring/{grafana,prometheus}
+chmod -R 777 /var/monitoring/
 
 # Because incorrect time trigger errors in prometheus
 echo "Turn on systemd-time-wait-sync.service for enable time-sync.target"

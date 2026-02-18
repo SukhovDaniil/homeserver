@@ -12,4 +12,4 @@
       mkfs.ext4 ${DISK_PART}
       ```
    2. Add LVM
-4. [Install moexnitoring](monitoring/README)
+4. [Install monitoring](monitoring/README)

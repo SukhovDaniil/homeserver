@@ -24,6 +24,7 @@
    mkfs.ext4 /dev/sdb1
    mkdir -p /var/monitoring
    mount -t auto /dev/sdb1 /var/monitoring/
+   cp /etc/fstab /etc/~fstab
    echo "UUID=$(blkid /dev/sdb1 | awk '{print $2}' | awk -F= '{print $2}' | sed 's/"//g') /var/monitoring ext4 defaults 0 0" >> /etc/fstab
    ```
 4. Configure monitoring

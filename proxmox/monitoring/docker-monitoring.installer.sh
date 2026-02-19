@@ -8,6 +8,10 @@ curl -o /root/docker-compose.yml https://raw.githubusercontent.com/SukhovDaniil/
 curl -o /root/prometheus.yml https://raw.githubusercontent.com/SukhovDaniil/homeserver/refs/heads/main/proxmox/monitoring/prometheus.yml
 curl -o /root/grafana-datasources.yml https://raw.githubusercontent.com/SukhovDaniil/homeserver/refs/heads/main/proxmox/monitoring/grafana-datasources.yml
 
+echo "download grafana dashboards"
+mkdir -p /root/grafana/dashboards
+curl -o /root/grafana/dashboards/node_exporter.yml https://grafana.com/api/dashboards/1860/revisions/42/download
+
 echo "create dirs for monitoring services"
 mkdir -p /var/monitoring/{grafana,prometheus}
 chmod -R 777 /var/monitoring/

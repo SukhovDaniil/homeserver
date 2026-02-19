@@ -17,7 +17,8 @@
        RAM: 8-16 GB (8192 MiB)
        Storage: 100-200 GB SSD (зависит от периода хранения)
        Network: 1 Gbps
-3. Add disk for monitoring data
+3. Install fdisk
+4. Add disk for monitoring data
    Add -> backup=0,discard=on,size=150G,ssd=1
    ```shell
    fdisk /dev/sdb
@@ -27,7 +28,8 @@
    cp /etc/fstab /etc/~fstab
    echo "UUID=$(blkid /dev/sdb1 | awk '{print $2}' | awk -F= '{print $2}' | sed 's/"//g') /var/monitoring ext4 defaults 0 0" >> /etc/fstab
    ```
-4. Configure monitoring
+5. Install wget
+6. Configure monitoring
     ```shell
     curl -o /root/docker-monitoring.installer.sh https://raw.githubusercontent.com/SukhovDaniil/homeserver/refs/heads/main/proxmox/monitoring/docker-monitoring.installer.sh
     chmod +x /root/docker-monitoring.installer.sh

@@ -10,7 +10,7 @@ curl -o /root/grafana-datasources.yml https://raw.githubusercontent.com/SukhovDa
 
 echo "download grafana dashboards"
 mkdir -p /root/grafana/dashboards
-curl -o /root/grafana/dashboards/node_exporter.yml https://grafana.com/api/dashboards/1860/revisions/42/download
+curl -o /root/grafana/dashboards/node_exporter.json https://grafana.com/api/dashboards/1860/revisions/42/download
 
 echo "create dirs for monitoring services"
 mkdir -p /var/monitoring/{grafana,prometheus}
